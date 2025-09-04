@@ -8,7 +8,7 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-_module_name=$(echo "$1" | awk -F'/' '{print $NF}')
+_module_name=$(python -c "print('-'.join(\"$1\".split(\"/\")[1:]))")
 
 # Init output dir
 if [ -z $2 ]; then
